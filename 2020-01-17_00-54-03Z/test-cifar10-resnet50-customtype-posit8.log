@@ -1,0 +1,29 @@
+Files already downloaded and verified
+inference time (ns),output class number,expected class number,output correct?
+Traceback (most recent call last):
+
+  File "/usr/local/lib/python3.7/site-packages/PIL/Image.py", line 2645, in fromarray
+    mode, rawmode = _fromarray_typemap[typekey]
+
+KeyError: ((1, 1, 32, 3), '|u1')
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "./tests/test-cifar10-resnet50-customtype-posit8.py", line 33, in <module>
+    run_pretrained_model_test(module, params, dataset, 'custom[posit8]8')
+
+  File "/root/tests/util/run_pretrained_model_test.py", line 21, in run_pretrained_model_test
+    for image, target_class in dataset[:NUM_INFERENCES]:
+
+  File "/usr/local/lib/python3.7/site-packages/torchvision/datasets/cifar.py", line 122, in __getitem__
+    img = Image.fromarray(img)
+
+  File "/usr/local/lib/python3.7/site-packages/PIL/Image.py", line 2647, in fromarray
+    raise TypeError("Cannot handle this data type")
+
+TypeError: Cannot handle this data type
+
